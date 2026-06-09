@@ -1,0 +1,119 @@
+/* ===================================================
+                  LEVEL MAP SCREEN
+  =================================================== */
+#screen-levelmap,
+.levelmap-content {
+  background: radial-gradient(circle, rgb(180, 200, 220) 0%, rgb(37, 232, 225) 100%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.levelmap-content h2 {
+  background: rgba(17, 124, 62, 0.5);
+  color: #ffffff;
+  text-align: center;
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  margin: 0 0 35px 0;
+  padding: 15px;
+  cursor: default;
+  pointer-events: none;
+
+  /* text-shadw: offsetX, offsetY, blurRadius, color*/
+  text-shadow:
+    0px 10px 2px rgb(53, 76, 95),
+    0px 9px 4px rgb(53, 76, 95),
+    0px 8px 6px rgb(53, 76, 95),
+    0px 7px 8px rgb(53, 76, 95),
+    0px 6px 10px rgb(53, 76, 95);
+
+  /* 0 8px 16px rgba(0, 0, 0, 0.5); */
+
+  border: 5px ridge rgb(251, 192, 45);
+  border-radius: 25px;
+}
+
+.levelmap-wrapper {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  max-height: 60svh;
+  overflow-y: auto;
+  padding: 10px 20px;
+}
+
+.levelmap-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  gap: 15px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.level-node {
+  position: relative;
+  background: rgb(39, 104, 26);
+  color: rgb(255, 255, 255);
+  border: 3px ridge rgb(251, 192, 45);
+  border-radius: 16px;
+  font-size: clamp(0.9rem, 3vw, 1.2rem);
+  font-weight: bold;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  aspect-ratio: 1/1;
+  width: 100%;
+  max-width: 70px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.level-node:hover:not(.locked) {
+  transform: scale(1.08);
+}
+
+.level-node.current {
+  animation: glow-level 1.2s infinite;
+  background: oklch(52.731% 0.13709 150.091);
+}
+
+.level-node.locked {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.level-node.locked::after {
+  content: "🔒";
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  background: rgb(39, 104, 26);
+  border-radius: 12px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.level-node.completed {
+  background: rgb(22, 101, 52);
+  border-color: rgb(252, 165, 165);
+}
+
+.level-star {
+  font-size: 0.8rem;
+  margin-top: 2px;
+}

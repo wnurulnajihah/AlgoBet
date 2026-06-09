@@ -1,0 +1,148 @@
+/* ===================================================
+                KEYFRAME ANIMATIONS
+  =================================================== */
+@keyframes focus-button {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes glow-level {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+  }
+}
+
+@keyframes pulseActiveBtn {
+  0% {
+    box-shadow: 0 0 4px rgb(255, 179, 0);
+  }
+  100% {
+    box-shadow: 0 0 12px rgb(255, 179, 0);
+  }
+}
+
+@keyframes pulseRunReady {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 4px rgb(16, 185, 129);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 0 12px rgb(16, 185, 129);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 16px rgb(16, 185, 129);
+  }
+}
+
+@keyframes pulseGoal {
+  0% {
+    transform: scale(1);
+    text-shadow: none;
+  }
+  50% {
+    transform: scale(1.05);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: none;
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.98) translateY(6px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes tilt-shaking {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes pulsePreview {
+  0% {
+    background-color: rgba(16, 185, 129, 0.5);
+    opacity: 0.4;
+    transform: scale(0.95);
+  }
+  50% {
+    background-color: rgba(16, 185, 129, 0.5);
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  100% {
+    background-color: rgba(16, 185, 129, 0.5);
+    opacity: 0.4;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes shake-and-flash {
+  0% {
+    transform: translateX(0);
+    background-color: initial;
+  }
+  25% {
+    transform: translateX(-4px);
+    background-color: #ffe6e6;
+  }
+  50% {
+    transform: translateX(4px);
+  }
+  75% {
+    transform: translateX(-2px);
+  }
+  100% {
+    transform: translateX(0);
+    background-color: initial;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}

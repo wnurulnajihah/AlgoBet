@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <title>M032420004 Project 2</title>
+
+    <link rel="icon" href="data:," />
+    <link rel="manifest" href="manifest.json" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/anim.css" />
+    <link rel="stylesheet" href="css/fx.css" />
+    <link rel="stylesheet" href="css/levelComplete.css" />
+    <link rel="stylesheet" href="css/root.css" />
+    <link rel="stylesheet" href="css/screenMenu.css" />
+    <link rel="stylesheet" href="css/screenLevelmap.css" />
+
+    <link rel="stylesheet" href="css/screenGameTutorial.css" />
+  </head>
+
+  <body>
+    <main class="console">
+      <div id="consoleTop" class="console-top">
+        <button id="btnTopBack" class="btn-top-back">←</button>
+      </div>
+
+      <div class="console-screen">
+        <!-- MENU SCREEN -->
+        <section id="screen-menu" class="screen">
+          <div class="menu-content">
+            <!-- Decorative Floating Elements -->
+            <div class="floating-decor d1">⬆️</div>
+            <div class="floating-decor d2">A</div>
+            <div class="floating-decor d3">➡️</div>
+            <div class="floating-decor d4">B</div>
+            <div class="floating-decor d5">⬇️</div>
+            <div class="floating-decor d6">🐝</div>
+
+            <h1 class="game-title">AlgoBet</h1>
+
+            <div class="menu-preview-banner">
+              <div class="preview-wall wall"></div>
+              <div class="preview-box letter-box">⬆️</div>
+              <div class="preview-wall wall"></div>
+              <div class="preview-box letter-box">⬅️</div>
+              <div class="preview-box bee-box">🐝</div>
+              <div class="preview-box letter-box">➡️</div>
+              <div class="preview-wall wall"></div>
+              <div class="preview-box letter-box">⬇️</div>
+              <div class="preview-wall wall"></div>
+            </div>
+
+            <div class="menu-buttons">
+              <button id="btnStart" class="menu-btn btn-start"></button>
+              <button id="btnMap" class="menu-btn btn-map" style="display: none">
+                MORE LEVELS
+              </button>
+              <button id="btnRateApp" class="menu-btn btn-rate">Rate Us</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- LEVEL MAP SCREEN -->
+        <section id="screen-levelmap" class="screen">
+          <div class="levelmap-content">
+            <h2 class="game-title">LEVEL SELECTION</h2>
+            <div class="levelmap-wrapper">
+              <div id="levelMapContainer" class="levelmap-container"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- GAME SCREEN -->
+        <section id="screen-game" class="screen">
+          <div class="game-content">
+            <div class="game-hud-header">
+              <span id="gameLevelBadge" class="level-badge">LEVEL 0</span>
+              <div id="movesCounter" class="moves-counter">Moves: 0 / 0</div>
+            </div>
+
+            <div id="gameWordHintContainer" class="game-word-hint">
+              <div id="gameCard" class="word-card-target"></div>
+              <div id="gameGoal" class="goal-slot">🍯</div>
+            </div>
+
+            <div class="workspace-container">
+              <!-- Grid always takes priority at the top in Portrait -->
+              <div class="game-play-area">
+                <div id="game-grid" class="game-grid"></div>
+              </div>
+
+              <!-- Controls and Queue nested elegantly below -->
+              <div class="interaction-block">
+                <div class="command-deck">
+                  <div class="game-command-section">
+                    <div class="game-queue-label">📋 Command Queue</div>
+                    <div id="gameCommandQueue" class="game-command-queue"></div>
+                  </div>
+
+                  <div class="game-controls-wrapper">
+                    <div class="game-controls">
+                      <button id="btnUp" aria-label="Move up">⬆️</button>
+                      <button id="btnLeft" aria-label="Move left">⬅️</button>
+                      <button id="btnDown" aria-label="Move down">⬇️</button>
+                      <button id="btnRight" aria-label="Move right">➡️</button>
+                    </div>
+
+                    <div class="gameRunClearBtn">
+                      <button id="btnRun" class="btn-run">▶ RUN</button>
+                      <button id="btnUndo" class="btn-undo">↩️ UNDO</button>
+                      <button id="btnClear" class="btn-clear">🗑 CLEAR</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TUTORIAL SCREEN -->
+        <section id="screen-tutorial" class="screen">
+          <div class="tutorial-content">
+            <div class="game-hud-header">
+              <span id="tutoLevelBadge" class="level-badge">LEVEL 0</span>
+              <div id="tutoMovesCounter" class="moves-counter">Moves: 0</div>
+            </div>
+
+            <div id="tutoWordHintContainer" class="tuto-word-hint">
+              <div id="tutoWordCard" class="word-card-target"></div>
+              <div id="tutoGoal" class="goal-slot">🍯</div>
+            </div>
+
+            <div class="workspace-container">
+              <!-- Tutorial Grid -->
+              <div class="tutorial-play-area">
+                <div id="tuto-grid" class="tuto-grid"></div>
+              </div>
+
+              <!-- Tutorial Controls and Queue -->
+              <div class="interaction-block">
+                <div class="command-deck">
+                  <div id="tutoCommandSection" class="tuto-command-section">
+                    <div class="tuto-queue-label">📋 My Commands</div>
+                    <div id="tutoCommandQueue" class="tuto-command-queue"></div>
+                  </div>
+                </div>
+
+                <div class="tuto-controls-wrapper">
+                  <div class="tuto-controls">
+                    <button id="btnUpTuto" aria-label="Move up">⬆️</button>
+                    <button id="btnLeftTuto" aria-label="Move left">⬅️</button>
+                    <button id="btnDownTuto" aria-label="Move down">⬇️</button>
+                    <button id="btnRightTuto" aria-label="Move right">➡️</button>
+                  </div>
+
+                  <div class="tutoRunClearBtn">
+                    <button id="btnRunTuto" class="tuto-btnRun">▶ RUN</button>
+                    <button id="btnUndoTuto" class="tuto-btnUndo">↩️ UNDO</button>
+                    <button id="btnClearTuto" class="tuto-btnClear">🗑 CLEAR</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="tutorial-instructional-wrapper" class="tutorial-text-card"></div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div id="focusOverlay" style="display: none"></div>
+    <canvas id="confettiCanvas" style="display: none"></canvas>
+
+    <!-- <div id="feedback-overlay" class="feedback-container-custom" style="display: none">
+      <div id="feedback-modal" class="feedback-content-custom">
+        <button type="button" id="btnCloseFeedback" class="close-feedback-btn">&times;</button>
+
+        <h2>🎉 Congratulations!</h2>
+        <p>Thank you for playing AlgoBet. We would love to hear your feedback.</p>
+
+        <form id="feedbackForm">
+          <div class="rating-group">
+            <label>Was the game easy to understand?</label>
+            <div class="stars">
+              <input type="radio" name="q1" value="5" id="q1-5" /><label for="q1-5">😍</label>
+              <input type="radio" name="q1" value="4" id="q1-4" /><label for="q1-4">😄</label>
+              <input type="radio" name="q1" value="3" id="q1-3" /><label for="q1-3">🙂</label>
+              <input type="radio" name="q1" value="2" id="q1-2" /><label for="q1-2">😐</label>
+              <input type="radio" name="q1" value="1" id="q1-1" /><label for="q1-1">😞</label>
+            </div>
+          </div>
+          <textarea
+            name="likedMost"
+            placeholder="What did you like most about the game?"
+          ></textarea>
+          <textarea
+            name="makeBetter"
+            placeholder="What would make the game even better?"
+          ></textarea>
+
+          <button type="submit" class="submit-btn">Submit Feedback</button>
+        </form>
+      </div>
+    </div> -->
+
+    <script type="module" src="js/script.js"></script>
+  </body>
+</html>

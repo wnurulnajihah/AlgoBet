@@ -1,0 +1,20 @@
+{
+  "name": "AlgoBet - Programming for Kids",
+  "short_name": "AlgoBet",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#1a2a1f",
+  "theme_color": "#7ed957",
+  "icons": [
+    {
+      "src": "./asset/icon_192px.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./asset/icon_512px.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

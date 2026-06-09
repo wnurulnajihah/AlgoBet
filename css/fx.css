@@ -1,0 +1,30 @@
+.glow-active-btn {
+  background: linear-gradient(to bottom, rgb(255, 202, 40), rgb(255, 160, 0)) !important;
+  border: 2px ridge rgb(255, 143, 0) !important;
+  box-shadow: 0 0 12px rgba(255, 179, 0, 0.5);
+  transform: scale(1.06) !important;
+  animation: pulseActiveBtn 0.8s infinite alternate !important;
+  z-index: 10;
+}
+
+.glow-run-ready {
+  background: linear-gradient(to bottom, rgb(52, 211, 153), rgb(16, 185, 129)) !important;
+  border: 2px ridge rgb(4, 120, 87) !important;
+  transform: scale(1.06) !important;
+  animation: pulseRunReady 1s infinite alternate !important;
+  z-index: 10;
+}
+
+.wrong-flash {
+  animation: shake-and-flash 0.3s ease-in-out;
+}
+
+#confettiCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100000;
+  pointer-events: none;
+}
