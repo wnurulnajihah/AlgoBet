@@ -172,17 +172,19 @@ export function showFeedbackModal() {
             (q, i) => `
         <div class="rating-group" style="margin-bottom: 18px; text-align: left;">
           <label style="font-weight: bold; display: block; margin-bottom: 8px; color: #333;">${i + 1}. ${q}</label>
-          <div class="stars" style="display: flex; flex-direction: row-reverse; justify-content: center; gap: 50px;">
+          <div class="stars" style="display: flex; flex-direction: row-reverse; justify-content: space-between; align-items: center; gap: 8px;">
+            <span style="font-size: 0.8rem; font-weight: bold; color: #2e7d32; background: #e8f5e9; padding: 4px 8px; border-radius: 20px;">Strongly Agree</span>
             ${[5, 4, 3, 2, 1]
               .map(
                 (val) => `
               <input type="radio" name="q${i + 1}" value="${val}" id="q${i + 1}-${val}" required style="position: absolute; opacity: 0; width: 0; height: 0;">
               <label for="q${i + 1}-${val}" class="emoji-star" style="font-size: 1.5rem; cursor: pointer; transition: transform 0.1s;">
-                ${val === 5 ? 5 /*"😍"*/ : val === 4 ? 4 /*"😄"*/ : val === 3 ? 3 /*"🙂"*/ : val === 2 ? 2 /*"😐"*/ : 1 /*"😞"*/}
+                ${val}
               </label>
             `,
               )
               .join("")}
+            <span style="font-size: 0.8rem; font-weight: bold; color: #c62828; background: #ffebee; padding: 4px 8px; border-radius: 20px;">Strongly Disagree</span>
           </div>
         </div>
       `,
@@ -196,7 +198,6 @@ export function showFeedbackModal() {
       </form>
     </div>
   `;
-
   document.body.appendChild(modal);
 
   // PEMBETULAN: Menukar .onsubmit kepada .onclick untuk butang pangkah biasa
