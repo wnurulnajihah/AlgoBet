@@ -157,28 +157,28 @@ export function showFeedbackModal() {
       <p style="color: #666; margin-bottom: 20px;">Thank you for playing AlgoBet. We would love to hear your feedback.</p>
       <form id="feedbackForm">
         ${[
-          "Was the game easy to understand?",
-          "Were the buttons and controls easy to use?",
-          "Was the game fun to play?",
-          "Did you enjoy the challenges in the game?",
-          "Did the game make you think before making a move?",
-          "Did the game help you plan your moves?",
-          "Did you like the colours and graphics?",
-          "Was the game screen easy to understand?",
-          "Would you like to play AlgoBet again?",
-          "Overall, how much do you like AlgoBet?",
+          "I would want to play this game a lot.",
+          "I found the game too confusing.",
+          "The game was really easy to play.",
+          "I think I would need an adult or a teacher to help me play this game.",
+          "All the different parts of the game worked really well together.",
+          "A lot of things in this game didn't make sense to me.",
+          "I would imagine that most people would learn to use this system very quickly.",
+          "The game felt annoying or clunky to play.",
+          "I felt really smart and confident while playing this game.",
+          "I had to learn way too many rules before I could even start playing.",
         ]
           .map(
             (q, i) => `
         <div class="rating-group" style="margin-bottom: 18px; text-align: left;">
           <label style="font-weight: bold; display: block; margin-bottom: 8px; color: #333;">${i + 1}. ${q}</label>
-          <div class="stars" style="display: flex; flex-direction: row-reverse; justify-content: flex-end; gap: 10px;">
+          <div class="stars" style="display: flex; flex-direction: row-reverse; justify-content: center; gap: 50px;">
             ${[5, 4, 3, 2, 1]
               .map(
                 (val) => `
               <input type="radio" name="q${i + 1}" value="${val}" id="q${i + 1}-${val}" required style="position: absolute; opacity: 0; width: 0; height: 0;">
-              <label for="q${i + 1}-${val}" class="emoji-star" style="font-size: 1.8rem; cursor: pointer; transition: transform 0.1s;">
-                ${val === 5 ? "😍" : val === 4 ? "😄" : val === 3 ? "🙂" : val === 2 ? "😐" : "😞"}
+              <label for="q${i + 1}-${val}" class="emoji-star" style="font-size: 1.5rem; cursor: pointer; transition: transform 0.1s;">
+                ${val === 5 ? 5 /*"😍"*/ : val === 4 ? 4 /*"😄"*/ : val === 3 ? 3 /*"🙂"*/ : val === 2 ? 2 /*"😐"*/ : 1 /*"😞"*/}
               </label>
             `,
               )
