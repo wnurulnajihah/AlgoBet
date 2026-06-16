@@ -41,6 +41,7 @@ export function updateMenuUI() {
   if (lastUnlockedLevel > totalLeveles) lastUnlockedLevel = totalLeveles;
   btnStart.textContent = `LEVEL ${lastUnlockedLevel}`;
   if (btnMap) btnMap.style.display = "block";
+  if (btnRateApp) btnRateApp.style.display = "block";
 }
 
 export function startGameHandler() {
